@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>片组词-常用词汇分类与组词教学平台</title>
+    <meta name="description" content="片组词大全，提供片字常用词语、成语、四字词语及造句示例。包含片甲不留、照片、唱片、肉片等常见搭配，帮助用户快速掌握片字在词汇中的正确用法。">
+    <meta name="keywords" content="片组词,片字组词,片字词语,片字造句,常用词汇">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f7fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            padding: 4px 16px;
+            align-items: center;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        /* Word Card */
+        .word-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .word-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-color);
+        }
+
+        .word-char {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .word-meaning {
+            font-size: 15px;
+            color: var(--text-light);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+            background: var(--secondary-color);
+        }
+
+        .section-title {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .category-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: background 0.2s;
+        }
+
+        .category-item:hover {
+            background: #fff;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cat-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .cat-count {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Word List Section */
+        .word-list-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+        }
+
+        .word-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .word-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .word-list-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .wl-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .wl-char {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .wl-word {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .wl-tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e6f7ff;
+            color: var(--primary-color);
+        }
+
+        /* Examples Section */
+        .examples-section {
+            padding: 60px 0;
+            background: var(--secondary-color);
+        }
+
+        .example-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+
+        .example-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .example-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .example-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: #a0aec0;
+            font-size: 14px;
+            margin-top: 12px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            border-top: 1px solid #4a5568;
+            padding-top: 20px;
+            text-align: center;
+            color: #718096;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px 0;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 12px;
+            }
+
+            .search-bar {
+                width: 100%;
+                order: 2;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>📖</span> 片组词
+        </a>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索词语、成语、造句...">
+        </div>
+        <nav class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">常用词</a>
+            <a href="#">成语大全</a>
+            <a href="#">造句示例</a>
+            <a href="#">关于我们</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>片组词大全与用法解析</h1>
+            <p>全面收录“片”字的常用词语、成语及四字词语，提供详细的词义解释与造句示例，帮助您快速掌握“片”字的正确搭配与用法。</p>
+            
+            <div class="word-grid">
+                <div class="word-card">
+                    <span class="word-char">片</span>
+                    <span class="word-meaning">薄片、影像</span>
+                </div>
+                <div class="word-card">
+                    <span class="word-char">照片</span>
+                    <span class="word-meaning">记录影像</span>
+                </div>
+                <div class="word-card">
+                    <span class="word-char">唱片</span>
+                    <span class="word-meaning">音乐载体</span>
+                </div>
+                <div class="word-card">
+                    <span class="word-char">肉片</span>
+                    <span class="word-meaning">食物切片</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">词语分类导航</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <span class="cat-icon">🖼️</span>
+                    <div class="cat-name">常用词语</div>
+                    <div class="cat-count">包含 200+ 个常用词</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">📜</span>
+                    <div class="cat-name">成语四字</div>
+                    <div class="cat-count">收录 50+ 成语</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">💬</span>
+                    <div class="cat-name">造句示例</div>
+                    <div class="cat-count">丰富语境应用</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">📝</span>
+                    <div class="cat-name">组词技巧</div>
+                    <div class="cat-count">学习构词规律</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Word List Section -->
+    <section class="word-list-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常用词语列表</h2>
+                <a href="#" style="color: var(--primary-color); font-size: 14px;">查看更多 &rarr;</a>
+            </div>
+            <div class="word-list">
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">照片</span>
+                        <span class="wl-tag">名词</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">记录影像</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">唱片</span>
+                        <span class="wl-tag">名词</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">音乐载体</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">肉片</span>
+                        <span class="wl-tag">名词</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">食物切片</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">片甲不留</span>
+                        <span class="wl-tag">成语</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">形容全军覆没</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">影片</span>
+                        <span class="wl-tag">名词</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">电影、录像</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">一片狼藉</span>
+                        <span class="wl-tag">成语</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">形容乱七八糟</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">唱片</span>
+                        <span class="wl-tag">名词</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">音乐载体</div>
+                </div>
+                <div class="word-list-item">
+                    <div class="wl-left">
+                        <span class="wl-char">片</span>
+                        <span class="wl-word">片甲不还</span>
+                        <span class="wl-tag">成语</span>
+                    </div>
+                    <div class="wl-right" style="font-size: 14px; color: #999;">形容全军覆没</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="examples-section">
+        <div class="container">
+            <h2 class="section-title">经典造句示例</h2>
+            
+            <div class="example-box">
+                <div class="example-title">📸 形容影像</div>
+                <div class="example-text">
+                    母亲年轻时留下了一张珍贵的<span class="example-highlight">照片</span>，至今仍保存在相册里。
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">🎬 形容电影</div>
+                <div class="example-text">
+                    这部科幻<span class="example-highlight">影片</span>的特效非常震撼，深受观众喜爱。
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">🍽️ 形容食物</div>
+                <div class="example-text">
+                    厨师将牛肉切成薄薄的<span class="example-highlight">肉片</span>，用大火快速翻炒。
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📖 形容纸张或布料</div>
+                <div class="example-text">
+                    这块布料质地柔软，剪下一小块<span class="example-highlight">片布</span>做了个围裙。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="word-list-section">
+        <div class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>“片”字在词语中通常是什么意思？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <div style="margin-top: 12px; color: var(--text-light);">
+                        “片”字在中文里主要有两种含义：一是表示物体切割成的薄而平的形状，如“肉片”、“片布”；二是表示较小的块状或量词，用于形容影像、电影、唱片等，如“照片”、“影片”、“唱片”。
+                    </div>
+                </details>
+                <details style="margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>“片甲不留”是什么意思？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <div style="margin-top: 12px; color: var(--text-light);">
+                        “片甲不留”是一个成语，意思是形容全军覆没，没有一个人活着回来。其中“片甲”指一片盔甲，比喻极少的残存部分，整句表达了彻底失败、毫无保留的意思。
+                    </div>
+                </details>
+                <details style="margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>如何使用“片”字进行组词？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <div style="margin-top: 12px; color: var(--text-light);">
+                        组词时，可以根据“片”字的含义进行联想。表示“薄片”时可以搭配食物、布料；表示“量词”时可以搭配影像、电影、唱片等。多阅读例句有助于掌握其用法。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">📖 片组词</div>
+                <p>专注提供汉字组词、成语解释及造句示例，致力于帮助学习者掌握汉字的正确用法。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">常用词语</a></li>
+                    <li><a href="#">成语大全</a></li>
+                    <li><a href="#">造句示例</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关资源</h4>
+                <ul>
+                    <li><a href="#">拼音学习</a></li>
+                    <li><a href="#">偏旁部首</a></li>
+                    <li><a href="#">同音字查询</a></li>
+                    <li><a href="#">字帖下载</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 片组词教学平台. 保留所有权利. 本站内容仅供学习参考.
+        </div>
+    </div>
+</footer>
+
+</body>
+          </html>
