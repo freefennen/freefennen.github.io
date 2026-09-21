@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="灼热小说周防killer官方资源站，提供周防killer相关同人小说、角色设定集及同人创作社区。收录热门同人作品，探讨角色故事与创作背景。">
+    <meta name="keywords" content="灼热小说,周防killer,同人小说,角色同人,创作社区">
+    <title>周防killer-灼热小说同人创作与角色资源站</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63031; /* 炽热红 */
+            --secondary-color: #2d3436;
+            --bg-color: #f5f6fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --accent-blue: #0984e3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-unit);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .nav-actions button:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #dfe6e9;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .more-link {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 280px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: rgba(214, 48, 49, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        .rank-num.top-1 { background: #ff7675; }
+        .rank-num.top-2 { background: #fab1a0; }
+        .rank-num.top-3 { background: #ffeaa7; }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag-cloud a {
+            background: #f1f2f6;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .tag-cloud a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Features / Intro */
+        .intro-section {
+            background: var(--card-bg);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: var(--container-width);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+            color: var(--text-sub);
+        }
+
+        .intro-features {
+            display: grid;
+            gap: 16px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(214, 48, 49, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #b2bec3;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🔥</span> 灼热小说
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">同人分类</a></li>
+                    <li><a href="#">周防killer</a></li>
+                    <li><a href="#">作品投稿</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button>登录 / 注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索周防killer的炽热世界</h1>
+            <p>汇聚全网优质同人小说与角色设定，为您呈现最纯粹的二次元创作热情。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索作品、角色或标签...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <section class="intro-section">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>关于周防killer同人创作</h2>
+                        <p>周防killer作为极具人气的角色形象，在同人创作圈中拥有独特的地位。本站专注于收录与周防killer相关的同人小说、短篇故事及角色解析。</p>
+                        <p>无论您是寻找深度剧情向的同人作品，还是想要了解角色的背景设定，这里都能满足您的阅读需求。我们致力于构建一个纯净、高质量的同人创作分享平台。</p>
+                    </div>
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">📚</div>
+                            <div><strong>海量资源</strong><br>持续更新的同人作品库</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✍️</div>
+                            <div><strong>创作交流</strong><br>与同好分享创作心得</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div><strong>纯净环境</strong><br>无广告干扰的阅读体验</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <h2>热门推荐</h2>
+                    <a href="#" class="more-link">查看更多 &rarr;</a>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/killer1/400/300" alt="同人封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">长篇连载</span>
+                            <h3 class="card-title">灼热之刃：周防的救赎</h3>
+                            <p class="card-desc">在充满危险的世界中，周防如何面对内心的挣扎？一段关于成长与救赎的深刻故事。</p>
+                            <div class="card-footer">
+                                <span>作者: 暴走铅笔</span>
+                                <span>2.3万次阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/killer2/400/300" alt="同人封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">短篇</span>
+                            <h3 class="card-title">雨夜后的咖啡店</h3>
+                            <p class="card-desc">一个安静的夜晚，在街角咖啡店发生的小插曲，展现了周防不为人知的一面。</p>
+                            <div class="card-footer">
+                                <span>作者: 零度切片</span>
+                                <span>1.5万次阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/killer3/400/300" alt="同人封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">角色解析</span>
+                            <h3 class="card-title">周防killer的战斗美学</h3>
+                            <p class="card-desc">深入剖析角色的战斗风格与心理活动，为您解读那些高燃的战斗瞬间。</p>
+                            <div class="card-footer">
+                                <span>作者: 战斗分析员</span>
+                                <span>5.1万次阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/killer4/400/300" alt="同人封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">AU设定</span>
+                            <h3 class="card-title">现代都市：杀手与律师</h3>
+                            <p class="card-desc">身份错位下的碰撞，杀手周防与正义律师之间不得不说的故事。</p>
+                            <div class="card-footer">
+                                <span>作者: 跨界者</span>
+                                <span>3.2万次阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <div class="section-header">
+                    <h2>最新更新</h2>
+                    <a href="#" class="more-link">查看更多 &rarr;</a>
+                </div>
+                <ul style="display: flex; flex-direction: column; gap: 15px;">
+                    <li style="display: flex; justify-content: space-between; background: white; padding: 15px; border-radius: 6px; border-left: 4px solid var(--accent-blue);">
+                        <div>
+                            <a href="#" style="font-weight: 600; font-size: 1.05rem;">失落的记忆碎片</a>
+                            <span style="color: var(--text-sub); font-size: 0.9rem; margin-left: 10px;">更新至第十二章</span>
+                        </div>
+                        <span style="color: var(--text-sub); font-size: 0.85rem;">昨天 20:30</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #b2bec3;">
+                        <div>
+                            <a href="#" style="font-weight: 600; font-size: 1.05rem;">周防的日常琐事</a>
+                            <span style="color: var(--text-sub); font-size: 0.9rem; margin-left: 10px;">更新至第五话</span>
+                        </div>
+                        <span style="color: var(--text-sub); font-size: 0.85rem;">2天前</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #b2bec3;">
+                        <div>
+                            <a href="#" style="font-weight: 600; font-size: 1.05rem;">霓虹灯下的阴影</a>
+                            <span style="color: var(--text-sub); font-size: 0.9rem; margin-left: 10px;">更新至第八章</span>
+                        </div>
+                        <span style="color: var(--text-sub); font-size: 0.85rem;">3天前</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-box">
+                <h3>热门标签</h3>
+                <div class="tag-cloud">
+                    <a href="#">周防killer</a>
+                    <a href="#">同人小说</a>
+                    <a href="#">战斗</a>
+                    <a href="#">救赎</a>
+                    <a href="#">短篇</a>
+                    <a href="#">同人图</a>
+                    <a href="#">同人志</a>
+                    <a href="#">角色分析</a>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>周防killer榜单</h3>
+                <ul class="rank-list">
+                    <li><span class="rank-num top-1">1</span><a href="#">周防killer：暗夜行者</a></li>
+                    <li><span class="rank-num top-2">2</span><a href="#">绯红之刃同人志</a></li>
+                    <li><span class="rank-num top-3">3</span><a href="#">杀手与少女</a></li>
+                    <li><span class="rank-num">4</span><a href="#">周防的过去</a></li>
+                    <li><span class="rank-num">5</span><a href="#">非日常的邂逅</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>关于我们</h3>
+                <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 10px;">
+                    本站是一个专注于周防killer及相关同人创作的社区平台。我们尊重原作者版权，欢迎广大创作者投稿。
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-sub);">
+                    联系方式: contact@example.com
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <span>🔥</span> 灼热小说
+                </div>
+                <p style="font-size: 0.9rem;">
+                    致力于为同人爱好者提供最优质的阅读与交流环境。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="#">相关官方网站</a></li>
+                    <li><a href="#">同人创作联盟</a></li>
+                    <li><a href="#">二次元社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 灼热小说. All Rights Reserved. 本站内容仅供交流学习使用.
+        </div>
+    </footer>
+
+</body>
+</html>
