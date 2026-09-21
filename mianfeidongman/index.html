@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费动漫网提供海量高清在线动漫资源，涵盖热血、恋爱、悬疑、科幻等多种题材。每日更新最新番剧，支持手机与电脑流畅观看，无广告干扰，打造极致的二次元追番体验。">
+    <meta name="keywords" content="免费动漫网,在线看动漫,动漫免费观看,高清动漫,最新动漫,番剧推荐">
+    <title>免费动漫网-海量高清在线动漫与最新番剧推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #00cec9;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --nav-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--nav-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 300px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        /* 主体内容区 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* 番剧列表 */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e1e1;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .anime-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .update-tag {
+            color: #ff7675;
+            font-weight: 500;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .ranking-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 18px;
+            font-weight: 800;
+            color: #dfe6e9;
+            width: 25px;
+            text-align: center;
+        }
+
+        .rank-item:nth-child(1) .rank-num { color: #ff7675; }
+        .rank-item:nth-child(2) .rank-num { color: #fdcb6e; }
+        .rank-item:nth-child(3) .rank-num { color: #e17055; }
+
+        .rank-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .rank-info p {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* 特色分类 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            background-color: #f0f3ff;
+        }
+
+        .cat-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cat-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2d3436;
+            color: #b2bec3;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #636e72;
+            font-size: 13px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none; /* 移动端简化隐藏侧边栏，实际项目中可做折叠 */
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none; /* 移动端简化导航 */
+            }
+            .search-box {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .anime-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-desc {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <span>免费动漫网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">最新番剧</a>
+                <a href="#">热门连载</a>
+                <a href="#">完结推荐</a>
+                <a href="#">剧场版</a>
+                <a href="#">排行榜</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索动漫名称、角色...">
+                <button>&#128269;</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索无限精彩的二次元世界</h1>
+            <p>每日更新海量高清动漫资源，无需下载，流畅观看。热血、恋爱、悬疑、科幻，总有一部适合你。</p>
+            <div class="hero-tags">
+                <span class="hero-tag"># 赛博朋克</span>
+                <span class="hero-tag"># 异世界转生</span>
+                <span class="hero-tag"># 恋爱喜剧</span>
+                <span class="hero-tag"># 悬疑推理</span>
+                <span class="hero-tag"># 奇幻冒险</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 特色分类 -->
+        <section class="category-grid">
+            <div class="category-card">
+                <span class="cat-icon">⚔️</span>
+                <span class="cat-name">热血战斗</span>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">💕</span>
+                <span class="cat-name">校园恋爱</span>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">🧠</span>
+                <span class="cat-name">悬疑推理</span>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">🚀</span>
+                <span class="cat-name">科幻机甲</span>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <!-- 最新更新 -->
+            <section class="latest-section">
+                <div class="section-title">
+                    <h2>最新更新</h2>
+                    <a href="#" class="view-all">查看更多 <span>&rarr;</span></a>
+                </div>
+                <div class="anime-grid">
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新至12集</span>
+                            <img src="https://picsum.photos/seed/anime1/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">星际守护者：黎明之战</h3>
+                            <div class="card-meta">
+                                <span>科幻 / 冒险</span>
+                                <span class="update-tag">昨天</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新至05集</span>
+                            <img src="https://picsum.photos/seed/anime2/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">樱花树下的约定</h3>
+                            <div class="card-meta">
+                                <span>校园 / 恋爱</span>
+                                <span class="update-tag">今天</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">完结</span>
+                            <img src="https://picsum.photos/seed/anime3/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">暗夜侦探事务所</h3>
+                            <div class="card-meta">
+                                <span>悬疑 / 恐怖</span>
+                                <span class="update-tag">2天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新至08集</span>
+                            <img src="https://picsum.photos/seed/anime4/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">异界炼金术师</h3>
+                            <div class="card-meta">
+                                <span>奇幻 / 热血</span>
+                                <span class="update-tag">3天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新至02集</span>
+                            <img src="https://picsum.photos/seed/anime5/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">机械之心：觉醒</h3>
+                            <div class="card-meta">
+                                <span>机甲 / 科幻</span>
+                                <span class="update-tag">4天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新至30集</span>
+                            <img src="https://picsum.photos/seed/anime6/300/420" alt="动漫封面">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">美食猎人传说</h3>
+                            <div class="card-meta">
+                                <span>美食 / 冒险</span>
+                                <span class="update-tag">5天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 侧边栏：热门排行 -->
+            <aside class="sidebar">
+                <div class="ranking-list">
+                    <div class="section-title">
+                        <h2>热门排行</h2>
+                    </div>
+                    <div class="ranking-content">
+                        <div class="rank-item">
+                            <span class="rank-num">1</span>
+                            <div class="rank-info">
+                                <h4><a href="#">绝地求生：都市传说</a></h4>
+                                <p>点击 1.2M</p>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">2</span>
+                            <div class="rank-info">
+                                <h4><a href="#">魔法少女的逆袭</a></h4>
+                                <p>点击 980K</p>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">3</span>
+                            <div class="rank-info">
+                                <h4><a href="#">深海迷航：起源</a></h4>
+                                <p>点击 850K</p>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">4</span>
+                            <div class="rank-info">
+                                <h4><a href="#">龙之谷：边境之战</a></h4>
+                                <p>点击 720K</p>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">5</span>
+                            <div class="rank-info">
+                                <h4><a href="#">时间旅行者的日记</a></h4>
+                                <p>点击 650K</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ranking-list">
+                    <div class="section-title">
+                        <h2>热门标签</h2>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">少女</a>
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">战斗</a>
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">治愈</a>
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">日常</a>
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">异世界</a>
+                        <a href="#" style="font-size: 13px; background: #f1f2f6; padding: 4px 10px; border-radius: 4px;">搞笑</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 推荐精选 -->
+        <section class="featured-section" style="margin-bottom: 60px;">
+            <div class="section-title">
+                <h2>本周精选</h2>
+                <a href="#" class="view-all">查看更多 <span>&rarr;</span></a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <article class="anime-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/featured1/300/420" alt="精选动漫">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">神域之战：圣光降临</h3>
+                        <div class="card-meta">
+                            <span>动作 / 冒险</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="anime-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/featured2/300/420" alt="精选动漫">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">职场生存指南</h3>
+                        <div class="card-meta">
+                            <span>职场 / 搞笑</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="anime-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/featured3/300/420" alt="精选动漫">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">青春的旋律</h3>
+                        <div class="card-meta">
+                            <span>音乐 / 青春</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="anime-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/featured4/300/420" alt="精选动漫">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">暗黑森林的秘密</h3>
+                        <div class="card-meta">
+                            <span>冒险 / 恐怖</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">免费动漫网</a>
+                    <p class="footer-desc">
+                        免费动漫网致力于为动漫爱好者提供最优质的在线观看体验。我们收录了全网最新的番剧资源，支持高清播放，界面简洁流畅，是您追番路上的最佳伴侣。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>网站导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">分类浏览</a></li>
+                        <li><a href="#">排行榜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">播放设置</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博账号</a></li>
+                        <li><a href="#">粉丝群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 免费动漫网 版权所有. 本站内容仅供学习交流，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
