@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="梵思诺 - 专业高端智能卫浴品牌，提供创新淋浴房、浴室柜及智能卫浴解决方案。探索梵思诺现代卫浴设计，体验极致舒适与科技融合的居家生活。">
+    <meta name="keywords" content="梵思诺, 智能淋浴房, 浴室柜, 卫浴品牌, 现代卫浴, 梵思诺官网">
+    <title>梵思诺 - 高端智能卫浴解决方案与淋浴房定制专家</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f4c81; /* 经典深蓝，体现稳重与科技 */
+            --accent-color: #e6b422; /* 香槟金，体现奢华与品质 */
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 通用布局类 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #0a3d6b;
+            border-color: #0a3d6b;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            margin-left: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(15, 76, 129, 0.7), rgba(15, 76, 129, 0.5)), url('https://picsum.photos/seed/bathroom_modern/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Product Showcase */
+        .products {
+            background-color: var(--white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .product-info p {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .product-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .product-link::after {
+            content: '→';
+            margin-left: 6px;
+            transition: var(--transition);
+        }
+
+        .product-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* About/Brand Story */
+        .about {
+            background-color: var(--bg-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h4 {
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Design Process */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eee;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .step:hover .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .step h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding: 0 10px;
+        }
+
+        /* Contact/CTA */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--white);
+        }
+
+        .btn-white:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 40px; }
+            .about-content { grid-template-columns: 1fr; }
+            .about-image { order: -1; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { height: 500px; }
+            .hero h1 { font-size: 32px; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-steps::before { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">梵思诺 <span>FINNO</span></a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#products">产品中心</a>
+                <a href="#about">品牌故事</a>
+                <a href="#process">设计服务</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>定义现代卫浴新美学</h1>
+                <p>梵思诺专注于高端智能淋浴房与整体浴室解决方案，将精湛工艺与前沿科技完美融合，为您打造极致舒适的居家空间。</p>
+                <a href="#products" class="btn btn-primary">探索系列产品</a>
+                <a href="#contact" class="btn btn-outline" style="margin-left: 15px; color: #fff; border-color: #fff;">预约设计咨询</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择梵思诺</h2>
+                    <p>我们致力于通过创新设计解决传统卫浴痛点，提供安全、耐用且美观的居住体验。</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>安全防护</h3>
+                        <p>采用高强度钢化玻璃与精密五金配件，多重安全锁设计，为家庭使用提供坚实的保障。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>极致工艺</h3>
+                        <p>源自德国的设计理念，配合精湛的表面处理技术，细节之处尽显品质与奢华。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚿</div>
+                        <h3>智能体验</h3>
+                        <p>融入智能恒温、自动清洁等科技元素，让每一次沐浴都成为一种享受。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>空间美学</h3>
+                        <p>极简主义设计语言，完美适配各种户型风格，提升整体家居装修档次。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选产品系列</h2>
+                    <p>从单扇淋浴房到整体浴室，满足您对个性化卫浴空间的所有想象。</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/shower_glass/600/400" alt="极简边框淋浴房">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">智能淋浴房</span>
+                            <h3>极简无边框系列</h3>
+                            <p>采用超白玻与隐形铰链技术，视觉通透，开启方式灵活，是现代极简装修的首选。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/vanity_cabinet/600/400" alt="岩板浴室柜">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">浴室配套</span>
+                            <h3>岩板一体式浴室柜</h3>
+                            <p>高温岩板台面，防潮耐磨，搭配智能镜柜设计，收纳与美观兼顾。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/spa_tub/600/400" alt="按摩浴缸">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">智能浴缸</span>
+                            <h3>多功能按摩浴缸</h3>
+                            <p>内置多种水疗模式，气泡按摩与水流冲击双重放松，重塑身心健康。</p>
+                            <a href="#" class="product-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="#" class="btn btn-outline">浏览全部产品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>关于梵思诺品牌</h2>
+                        <p>梵思诺（FINNO）创立于卫浴行业蓬勃发展的时期，始终秉承“科技卫浴，品质生活”的理念。我们深知浴室不仅是洗漱的空间，更是家中最放松、最私密的港湾。</p>
+                        <p>经过多年的技术积累，梵思诺已发展成为集研发、设计、生产、销售于一体的综合性卫浴企业。我们的产品远销海内外，赢得了众多设计师与高端业主的青睐。</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h4>10+</h4>
+                                <span>年行业经验</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>500+</h4>
+                                <span>专利技术</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>1000+</h4>
+                                <span>合作项目</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/workshop/600/400" alt="梵思诺生产车间">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Process -->
+        <section id="process" class="section process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>定制设计服务流程</h2>
+                    <p>从测量到安装，我们提供全流程的专业支持，确保您的卫浴空间完美落地。</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>上门测量</h3>
+                        <p>专业设计师上门测量尺寸，现场勘查环境，了解您的个性化需求。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>方案设计</h3>
+                        <p>结合空间结构与审美偏好，为您提供多套3D效果图与定制方案。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>生产制造</h3>
+                        <p>工厂精密加工，严格质检，确保每一件产品都符合高标准的品质要求。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>安装交付</h3>
+                        <p>经验丰富的安装团队进行施工，确保安全、美观、无后顾之忧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="section cta-section">
+            <div class="container">
+                <h2>开启您的品质卫浴之旅</h2>
+                <p>无论是新房装修还是旧房改造，梵思诺都能为您提供最佳解决方案。</p>
+                <a href="#" class="btn btn-white">预约免费测量</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>梵思诺 FINNO</h3>
+                    <p>专注高端智能卫浴，为您打造极致舒适的生活空间。品质源于细节，服务始于真诚。</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="微信">W</a>
+                        <a href="#" aria-label="微博">B</a>
+                        <a href="#" aria-label="抖音">D</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">智能淋浴房</a></li>
+                        <li><a href="#">整体浴室</a></li>
+                        <li><a href="#">浴室柜系列</a></li>
+                        <li><a href="#">智能马桶</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>解决方案</h4>
+                    <ul>
+                        <li><a href="#">新房装修</a></li>
+                        <li><a href="#">旧房改造</a></li>
+                        <li><a href="#">酒店卫浴</a></li>
+                        <li><a href="#">工程项目</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">品牌加盟</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">招商热线：400-123-4567</a></li>
+                        <li><a href="#">总部地址：中国卫浴之都</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 梵思诺卫浴科技有限公司 版权所有 | 沪ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuBtn.addEventListener('click', function() {
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '80px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.backgroundColor = '#fff';
+                    navLinks.style.padding = '20px';
+                    navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                }
+            });
+
+            // 点击链接后自动收起菜单（移动端体验优化）
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
